@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101713">
+  <title>Studio Forma | Personal Trainer</title>
+  <style>
+    :root{--bg:#0d1411;--panel:#151f19;--panel2:#1b2921;--text:#f4f7f3;--muted:#a8b7ad;--accent:#b7f36b;--line:#2a3a30;--danger:#ff8d8d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#0d1411ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:1px;font-size:1.1rem}.brand span{color:var(--accent)}
+    .links{display:flex;gap:24px;color:var(--muted);font-size:.93rem}.links a:hover{color:var(--accent)}
+    .btn{border:0;border-radius:12px;background:var(--accent);color:#14200f;font-weight:800;padding:12px 18px;cursor:pointer;display:inline-block}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+    .hero{padding:86px 0 70px;background:radial-gradient(ellipse at 80% 20%,#34532d55,transparent 42%),linear-gradient(120deg,#101a14,#0d1411)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.78rem}
+    h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.02;letter-spacing:-3px;margin:16px 0 20px}.hero p{color:var(--muted);max-width:570px;font-size:1.08rem}
+    .hero-card{background:linear-gradient(145deg,#24382a,#17221b);border:1px solid #405342;border-radius:28px;padding:28px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 70px #0005}
+    .hero-card .big{font-size:4rem}.hero-card h3{font-size:1.7rem;margin:8px 0}.hero-card p{font-size:.95rem}
+    section{padding:76px 0}.section-head{max-width:650px;margin-bottom:30px}.section-head h2{font-size:2.25rem;line-height:1.1;margin:8px 0 12px}.section-head p,.muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}.card .emoji{font-size:1.8rem}.card h3{margin:12px 0 6px}.card p{color:var(--muted);margin:0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px}
+    label{display:block;font-size:.9rem;font-weight:700;margin:13px 0 6px}input,select,textarea{width:100%;background:#0e1712;border:1px solid #34463a;color:var(--text);padding:12px 13px;border-radius:11px;font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--accent)}textarea{min-height:95px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.full{grid-column:1/-1}
+    .hint{font-size:.82rem;color:var(--muted);margin-top:10px}.notice{background:#26331f;border:1px solid #536c3c;color:#d9f6bf;padding:13px 15px;border-radius:12px;font-size:.9rem;margin:14px 0}
+    .student-list{display:grid;gap:12px}.student{border:1px solid var(--line);background:#111a14;border-radius:14px;padding:16px}.student-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.student h4{margin:0}.tag{font-size:.75rem;color:var(--accent);border:1px solid #526d3e;border-radius:30px;padding:3px 9px}.student p{margin:7px 0;color:var(--muted);font-size:.9rem}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.small{font-size:.82rem;padding:8px 11px}.empty{color:var(--muted);padding:18px;border:1px dashed var(--line);border-radius:14px;text-align:center}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:800px){.hero-grid,.two-col{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.links{display:none}.hero{padding:62px 0}.hero-card{min-height:230px}section{padding:56px 0}}
+    @media(max-width:480px){.form-grid{grid-template-columns:1fr}.full{grid-column:auto}h1{letter-spacing:-1.5px}.panel{padding:19px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="#">STUDIO <span>FORMA.</span></a>
+  <div class="links"><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#cadastro">Cadastro</a><a href="#gestao">Área do personal</a></div>
+  <a class="btn" href="#cadastro">Quero começar</a>
+</nav></div></header>
+
+<main>
+  <section class="hero"><div class="wrap hero-grid">
+    <div><div class="eyebrow">Treinamento com acompanhamento</div>
+      <h1>Seu objetivo.<br><span style="color:var(--accent)">Seu ritmo.</span><br>Sua evolução.</h1>
+      <p>Treinos planejados com atenção à sua rotina, experiência e objetivos. Um passo de cada vez, com orientação e consistência.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:25px"><a class="btn" href="#cadastro">Cadastrar como aluno</a><a class="btn secondary" href="#servicos">Conhecer serviços</a></div>
+    </div>
+    <div class="hero-card"><div class="big">✦</div><div><div class="eyebrow">Acompanhamento individual</div><h3>Treino pensado para você.</h3><p>Organização, orientação e acompanhamento durante sua jornada.</p></div></div>
+  </div></section>
+
+  <section id="sobre"><div class="wrap two-col">
+    <div class="section-head"><div class="eyebrow">Sobre o trabalho</div><h2>Mais do que treinar: construir bons hábitos.</h2><p>Atendimento com planejamento individual, respeitando o nível de experiência, a disponibilidade e as necessidades de cada aluno.</p></div>
+    <div class="panel"><h3>Como funciona</h3><p class="muted">1. Você preenche seu cadastro.<br>2. Conversamos sobre seus objetivos e sua rotina.<br>3. O profissional avalia as informações e organiza uma proposta de treino.<br>4. O plano é acompanhado e ajustado quando necessário.</p></div>
+  </div></section>
+
+  <section id="servicos"><div class="wrap"><div class="section-head"><div class="eyebrow">Serviços</div><h2>Um acompanhamento para cada fase.</h2><p>Escolha o formato que combina com sua rotina. Os detalhes são definidos em conversa com o profissional.</p></div>
+    <div class="cards">
+      <article class="card"><div class="emoji">🏋️</div><h3>Treino individual</h3><p>Planejamento personalizado de acordo com seus objetivos e sua experiência.</p></article>
+      <article class="card"><div class="emoji">📅</div><h3>Acompanhamento</h3><p>Organização da rotina, registro da evolução e ajustes no planejamento.</p></article>
+      <article class="card"><div class="emoji">🤝</div><h3>Orientação presencial</h3><p>Orientação durante a execução dos exercícios e atenção à técnica.</p></article>
+    </div>
+  </div></section>
+
+  <section id="cadastro"><div class="wrap"><div class="section-head"><div class="eyebrow">Vamos começar</div><h2>Cadastro de aluno</h2><p>Preencha os dados básicos para que o personal possa entrar em contato e conversar sobre seu planejamento.</p></div>
+    <div class="two-col">
+      <form class="panel" id="studentForm">
+        <div class="form-grid">
+          <div class="full"><label for="name">Nome completo *</label><input id="name" required maxlength="80" placeholder="Seu nome"></div>
+          <div><label for="age">Idade *</label><input id="age" type="number" min="10" max="100" required placeholder="Ex.: 25"></div>
+          <div><label for="contact">WhatsApp ou telefone *</label><input id="contact" required maxlength="30" placeholder="(00) 00000-0000"></div>
+          <div><label for="goal">Objetivo principal *</label><select id="goal" required><option value="">Selecione</option><option>Condicionamento físico</option><option>Melhorar força</option><option>Saúde e bem-estar</option><option>Mobilidade e postura</option><option>Outro (conversar)</option></select></div>
+          <div><label for="level">Experiência com treino</label><select id="level"><option>Iniciante</option><option>Intermediário</option><option>Avançado</option><option>Estou retornando</option></select></div>
+          <div class="full"><label for="availability">Dias/horários disponíveis</label><input id="availability" placeholder="Ex.: segunda, quarta e sexta à tarde"></div>
+          <div class="full"><label for="notes">Observações importantes (opcional)</label><textarea id="notes" placeholder="Conte sobre sua rotina ou algo que o profissional precise saber. Não inclua informações íntimas."></textarea></div>
+        </div>
+        <div class="notice">O cadastro não substitui uma avaliação. Antes de iniciar, converse com o profissional sobre sua saúde, limitações e necessidade de liberação médica.</div>
+        <button class="btn" type="submit">Enviar cadastro</button>
+        <p class="hint">Demonstração: os dados ficam salvos somente neste navegador/dispositivo.</p>
+      </form>
+      <div class="panel"><h3>O que acontece depois?</h3><p class="muted">O personal analisa o cadastro, entra em contato e conversa com você antes de montar o plano. Nenhum treino deve ser iniciado apenas com base em um formulário.</p><hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><h3>Contato</h3><p class="muted">WhatsApp: <span id="publicPhone">(adicione seu número)</span><br>Instagram: <span id="publicInstagram">@seuinstagram</span></p><p class="hint">Edite esses dados no código do site para colocar seus contatos.</p></div>
+    </div>
+  </div></section>
+
+  <section id="gestao"><div class="wrap"><div class="section-head"><div class="eyebrow">Painel demonstrativo</div><h2>Área do personal</h2><p>Veja os cadastros recebidos e registre um plano individual para cada aluno.</p></div>
+    <div class="two-col">
+      <div class="panel"><h3>Alunos cadastrados</h3><div id="students" class="student-list"><div class="empty">Ainda não há alunos cadastrados.</div></div></div>
+      <form class="panel" id="planForm"><h3>Criar / atualizar plano</h3>
+        <label for="planStudent">Aluno *</label><select id="planStudent" required><option value="">Cadastre um aluno primeiro</option></select>
+        <label for="planTitle">Nome do plano *</label><input id="planTitle" required placeholder="Ex.: Plano de adaptação">
+        <label for="planContent">Descrição do planejamento *</label><textarea id="planContent" required placeholder="Registre aqui as orientações definidas pelo profissional, os dias e os exercícios."></textarea>
+        <label for="planReview">Data de revisão</label><input id="planReview" type="date">
+        <button class="btn" type="submit" style="margin-top:16px">Salvar plano do aluno</button>
+        <p class="hint">Os planos são registros administrativos. A prescrição deve ser feita por profissional qualificado após avaliação individual.</p>
+      </form>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Studio Forma. Todos os direitos reservados.</span><span>Movimento, constância e cuidado.</span></div></footer>
+
+<script>
+  // Demonstração local: para uso real com vários alunos, conecte a um backend seguro.
+  const KEY = 'studioFormaDataV1';
+  let data = JSON.parse(localStorage.getItem(KEY) || '{"students":[],"plans":{}}');
+  const $ = id => document.getElementById(id);
+  const save = () => localStorage.setItem(KEY, JSON.stringify(data));
+  const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  $('year').textContent = new Date().getFullYear();
+
+  $('studentForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const student = {
+      id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now())),
+      name: $('name').value.trim(), age: $('age').value, contact: $('contact').value.trim(),
+      goal: $('goal').value, level: $('level').value, availability: $('availability').value.trim(),
+      notes: $('notes').value.trim(), created: new Date().toLocaleDateString('pt-BR')
+    };
+    data.students.push(student); save(); render();
+    e.target.reset();
+    alert('Cadastro salvo neste dispositivo!');
+  });
+
+  $('planForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const id = $('planStudent').value;
+    if (!id || !data.students.some(s => s.id === id)) return alert('Selecione um aluno válido.');
+    data.plans[id] = {title:$('planTitle').value.trim(), content:$('planContent').value.trim(), review:$('planReview').value};
+    save(); render(); e.target.reset();
+    alert('Plano salvo para este aluno!');
+  });
+
+  function render(){
+    const list = $('students'), select = $('planStudent');
+    if (!data.students.length) {
+      list.innerHTML = '<div class="empty">Ainda não há alunos cadastrados.</div>';
+      select.innerHTML = '<option value="">Cadastre um aluno primeiro</option>';
+      return;
+    }
+    list.innerHTML = data.students.map(s => {
+      const p = data.plans[s.id];
+      return `<article class="student"><div class="student-top"><h4>${safe(s.name)}</h4><span class="tag">${safe(s.level)}</span></div>
+        <p>${safe(s.age)} anos · ${safe(s.contact)}<br>Objetivo: ${safe(s.goal)}<br>Disponibilidade: ${safe(s.availability || 'Não informada')}</p>
+        ${p ? `<div class="notice"><strong>${safe(p.title)}</strong><br>${safe(p.content).replace(/\n/g,'<br>')}<br><small>Revisão: ${safe(p.review || 'A definir')}</small></div>` : '<p>Plano ainda não criado.</p>'}
+        <div class="actions"><button class="btn secondary small" type="button" onclick="editPlan('${s.id}')">Editar plano</button><button class="btn secondary small" type="button" onclick="deleteStudent('${s.id}')">Excluir cadastro</button></div></article>`;
+    }).join('');
+    select.innerHTML = '<option value="">Selecione um aluno</option>' + data.students.map(s => `<option value="${s.id}">${safe(s.name)}</option>`).join('');
+  }
+  window.editPlan = id => {
+    const p = data.plans[id]; $('planStudent').value = id;
+    if (p) {$('planTitle').value=p.title; $('planContent').value=p.content; $('planReview').value=p.review || '';}
+    $('planForm').scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  window.deleteStudent = id => {
+    if (!confirm('Excluir este cadastro e o plano associado?')) return;
+    data.students = data.students.filter(s => s.id !== id); delete data.plans[id]; save(); render();
+  };
+  render();
+</script>
+</body>
+</html>
